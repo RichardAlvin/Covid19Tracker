@@ -102,7 +102,7 @@ class NavBar extends HTMLElement {
         
         <a href="#">RAP_Movie</a>
         <a href="#" class="active">Home</a>
-        <a href="favorite">Favorite</a>
+        <a href="favorites.html">Favorite</a>
 
         <div class="searchContainer">
           <form action="/action_page.php">
