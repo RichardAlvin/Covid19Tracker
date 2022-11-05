@@ -100,8 +100,8 @@ class NavBar extends HTMLElement {
           }
         </style>
         
-        <a href="#">RAP_Movie</a>
-        <a href="#" class="active">Home</a>
+        <a href="/">RAP_Movie</a>
+        <a href="/" class="active">Home</a>
         <a href="favorites.html">Favorite</a>
 
         <div class="searchContainer">
