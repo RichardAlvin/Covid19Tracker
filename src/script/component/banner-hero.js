@@ -24,7 +24,7 @@ class BannerHero extends HTMLElement {
                 background-color: lightgrey;
                 color: black;
                 overflow: hidden;
-                min-height: 350px;
+                min-height: 335px;
             }
             .row{
               display:flex;

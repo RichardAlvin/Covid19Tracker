@@ -1,6 +1,7 @@
 import '../component/nav-bar.js';
 import '../component/banner-hero.js';
-import DataSource from '../data/data-source.js';
+import '../component/rated-movie.js';
+import RatedMovieSource from '../data/rated-movie-source.js';
  
 const main = () => {
 
