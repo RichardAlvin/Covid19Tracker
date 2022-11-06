@@ -75,7 +75,7 @@ class NavBar extends HTMLElement {
           }
 
           .searchButton{
-            border-radius: 10px;
+            border-radius: 5px;
             background-color: green;
             color: white;
             padding: 10px;

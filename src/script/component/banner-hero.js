@@ -1,3 +1,5 @@
+import img from '../../img/banner-hero.png';
+
 class BannerHero extends HTMLElement {
     constructor() {
       super();
@@ -18,17 +20,53 @@ class BannerHero extends HTMLElement {
             }
             :host {
                 display: block;
-                width: 100%;
-                background-color: black;
+                /*background-image: img;*/
+                background-color: lightgrey;
                 color: black;
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
                 overflow: hidden;
+                min-height: 350px;
             }
-            h1{
-                color:black;
+            .row{
+              display:flex;
+              flex-direction: row;
+              padding: 5%;
+            }
+            .col-left{
+              flex-basis: 60%;
+              line-height: 50px;
+            }
+            .col-right{
+              flex-basis: 40%;
+            }
+            .latestButton{
+              border-radius: 5px;
+              background-color: #07c3e0;
+              color: white;
+              padding: 10px;
+              border: none;
+            }
+            .favoriteButton{
+              border-radius: 5px;
+              background-color: #de8d00;
+              color: white;
+              padding: 10px;
+              border: none;
+              margin-left: 5px;
             }
         </style>
-        <h1>test</h1>
+
+        <div class="row">
+            <div class="col-left">
+              <h1>Find Favorite <br>Movies</h1>
+              <p>Easiest Store Your Favorite Movie with RAP_Movie</p>
+              <div>
+                <button class="latestButton">Latest</button>
+                <button class="favoriteButton">Favorite</button>
+              </div>
+            </div>
+            <div class="col-right">
+            </div>
+        </div>
       `;
     }
   }
