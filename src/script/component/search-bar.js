@@ -8,86 +8,79 @@ class SearchBar extends HTMLElement {
       this.render();
     }
    
-    set clickEvent(event) {
-      this._clickEvent = event;
-      this.render();
-    }
+    // set clickEvent(event) {
+    //   this._clickEvent = event;
+    //   this.render();
+    // }
    
-    get value() {
-        return this.shadowDOM.querySelector('#searchElement').value;
-    }
+    // get value() {
+    //     return this.shadowDOM.querySelector('#searchElement').value;
+    // }
    
     render() {
         this.shadowDOM.innerHTML = `
         <style>
-        .search-container {
-          max-width: 800px;
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-          padding: 16px;
-          border-radius: 5px;
-          display: flex;
-          position: sticky;
-          top: 10px;
-          background-color: white;
-        }
-        
-        .search-container > input {
-          width: 75%;
-          padding: 16px;
-          border: 0;
-          border-bottom: 1px solid cornflowerblue;
-          font-weight: bold;
-        }
-        
-        .search-container > input:focus {
-          outline: 0;
-          border-bottom: 2px solid cornflowerblue;
-        }
-        
-        .search-container > input:focus::placeholder {
-          font-weight: bold;
-        }
-        
-        .search-container >  input::placeholder {
-          color: cornflowerblue;
-          font-weight: normal;
-        }
-        
-        .search-container > button {
-          width: 23%;
-          cursor: pointer;
-          margin-left: auto;
-          padding: 16px;
-          background-color: cornflowerblue;
-          color: white;
-          border: 0;
-          text-transform: uppercase;
-        }
-        
-        @media screen and (max-width: 550px){
-          .search-container {
-            flex-direction: column;
-            position: static;
+          .searchContainer {
+            float: right;
+          }
+
+          input[type=text] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
           }
           
-          .search-container > input {
-            width: 100%;
-            margin-bottom: 12px;
+          .searchContainer button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
           }
           
-          .search-container > button {
-            width: 100%;
+          .searchContainer button:hover {
+            background: #ccc;
           }
-        }
+
+          .searchButton{
+            border-radius: 5px;
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: none;
+          }
+
+          @media screen and (max-width: 600px) {
+            .searchContainer {
+              float: none;
+            }
+            a, input[type=text], .searchContainer button {
+              float: none;
+              display: block;
+              text-align: left;
+              width: 100%;
+              margin: 0;
+              padding: 14px;
+            }
+            input[type=text] {
+              border: 1px solid #ccc;  
+            }
+          }
         </style>
-        
-        <div id="search-container" class="search-container">
-          <input placeholder="Search football club" id="searchElement" type="search">
-          <button id="searchButtonElement" type="submit">Search</button>
+
+        <div class="searchContainer">
+          <form action="/action_page.php">
+            <input type="text" placeholder="Find Name of Movie" name="search">
+            <button class="searchButton" type="submit">Search</button>
+          </form>
         </div>
       `;
    
-      this.shadowDOM.querySelector('#searchButtonElement').addEventListener('click', this._clickEvent);
+      //this.shadowDOM.querySelector('#searchButtonElement').addEventListener('click', this._clickEvent);
     }
   }
    

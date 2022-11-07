@@ -1,3 +1,5 @@
+import './search-bar.js';
+
 class NavBar extends HTMLElement {
     constructor() {
       super();
@@ -98,12 +100,7 @@ class NavBar extends HTMLElement {
         <a href="/" class="active">Home</a>
         <a href="favorites.html">Favorite</a>
 
-        <div class="searchContainer">
-          <form action="/action_page.php">
-            <input type="text" placeholder="Find Name of Movie" name="search">
-            <button class="searchButton" type="submit">Search</button>
-          </form>
-        </div>
+        <search-bar></search-bar>
       `;
     }
   }
