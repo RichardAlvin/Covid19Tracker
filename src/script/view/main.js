@@ -20,7 +20,7 @@ const main = async () => {
 
     //get rated-movie
     const ratedMovie = await MovieSource.getAllRatedMovie();
-    console.log(ratedMovie);
+    ratedMovieElement
     //renderResult(ratedMovie);
 
     const renderResult = results => {
