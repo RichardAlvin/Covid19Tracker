@@ -17,7 +17,7 @@ class MovieItem extends HTMLElement{
                     padding: 0;
                     box-sizing: border-box;
                 }
-                .column{
+                :host{
                     float: left;
                     width: 25%;
                     padding: 0 10px;
@@ -30,12 +30,10 @@ class MovieItem extends HTMLElement{
                 }
             </style>
 
-            <div class="column">
-                <div class="card">
-                    <img src="${this._movie.poster_path}">
-                    <h2>${this._movie.original_title}</h2>
-                    <p>Released Date: ${this._movie.release_date}</p>
-                </div>
+            <div class="card">
+                <img src="https://image.tmdb.org/t/p/w500/${this._movie.poster_path}">
+                <h2>${this._movie.original_title}</h2>
+                <p>Released Date: ${this._movie.release_date}</p>
             </div>
             
         `;
