@@ -1,25 +1,30 @@
-//import './favorite-item.js';
+import './movie-item.js';
  
-class RatedMovie extends HTMLElement {
+class MovieList extends HTMLElement {
   constructor() {
     super();
     this.shadowDOM = this.attachShadow({mode: 'open'});
   }
 
-  connectedCallback(){
+  set movies(movies){
+    this._movies = movies;
     this.render();
   }
  
   render() {
     this.shadowDOM.innerHTML = `
       <style>
-        :host {
-          color: black;
-        }
+
       </style>
 
       <h1>Rated Movie</h1>
     `;
+
+    this._movies.forEach(movie =>{
+      const movieItemElement = document.createElement('movie-item');
+      movieItemElement.movie = movie;
+      this.shadowDOM.appendChild(movieItemElement);
+    });
     // this._clubs.forEach(club => {
     //   const clubItemElement = document.createElement('club-item');
     //   clubItemElement.club = club;
@@ -28,4 +33,4 @@ class RatedMovie extends HTMLElement {
   }
 }
  
-customElements.define('rated-movie', RatedMovie);
+customElements.define('movie-list', MovieList);

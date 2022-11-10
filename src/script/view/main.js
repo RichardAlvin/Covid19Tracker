@@ -1,13 +1,12 @@
 import '../component/nav-bar.js';
 import '../component/banner-hero.js';
-import '../component/rated-movie.js';
+import '../component/movie-list.js';
 import MovieSource from '../data/movie-source';
-import RatedMovieSource from '../data/rated-movie-source.js';
  
 const main = async () => {
     //const searchElement = document.querySelector('search-bar');
     //const movieListElement = document.querySelector('club-list');
-    const ratedMovieElement = document.querySelector('rated-movie');
+    const ratedMovieElement = document.querySelector('movie-list');
 
     // const onButtonSearchClicked = async () => {
     //     try{
@@ -20,16 +19,16 @@ const main = async () => {
 
     //get rated-movie
     const ratedMovie = await MovieSource.getAllRatedMovie();
-    ratedMovieElement
+    ratedMovieElement.movies = ratedMovie;
     //renderResult(ratedMovie);
 
-    const renderResult = results => {
-        ratedMovieElement.clubs = results;
-    }
+    // const renderResult = results => {
+    //     ratedMovieElement.clubs = results;
+    // }
 
-    const fallbackResult = message =>{
-        ratedMovieElement.renderError(message);
-    }
+    // const fallbackResult = message =>{
+    //     ratedMovieElement.renderError(message);
+    // }
 
     //searchElement.clickEvent = onButtonSearchClicked;
 };
