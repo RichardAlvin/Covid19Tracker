@@ -17,9 +17,16 @@ main {
   margin: 0px auto;
 }
 
-club-list {
-  display: block;
-  margin-top: 32px;
-  width: 100%;
-  padding: 16px;
+.container{
+  margin: 2% 3%;
+}
+
+.btn-movie{
+  border-radius: 5px;
+  background-color: #07c3e0;
+  color: white;
+  padding: 10px;
+  border: none;
+  font-size: 16px;
+  text-decoration: none;
 }

@@ -1,6 +1,6 @@
 import './movie-item.js';
  
-class MovieList extends HTMLElement {
+class PopularMovieList extends HTMLElement {
   constructor() {
     super();
     this.shadowDOM = this.attachShadow({mode: 'open'});
@@ -14,18 +14,25 @@ class MovieList extends HTMLElement {
   render() {
     this.shadowDOM.innerHTML = `
       <style>
-
+        :host{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          flex-flow: wrap;
+        }
       </style>
-
-      <h1>Rated Movie</h1>
     `;
 
+    let i = 0;
+
     this._movies.forEach(movie =>{
+      if(i == 4) return;
       const movieItemElement = document.createElement('movie-item');
       movieItemElement.movie = movie;
       this.shadowDOM.appendChild(movieItemElement);
+      i++;
     });
   }
 }
  
-customElements.define('movie-list', MovieList);
+customElements.define('popular-movie-list', PopularMovieList);

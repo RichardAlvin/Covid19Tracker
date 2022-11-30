@@ -12,39 +12,70 @@ class MovieItem extends HTMLElement{
     render(){
         this.ShadowDOM.innerHTML = `
             <style>
-                *{
-                    margin: 0;
-                    padding: 0;
-                    box-sizing: border-box;
-                }
                 :host{
-                    margin: 0 -5px;
+                    width: 20%;
+                    background: #fff;
+                    border: 1px solid #ccc;
+                    margin-bottom: 50px;
+                    transition: 0.3s;
                 }
-                :host:after{
-                    content: "";
-                    display: table;
-                    clear: both;
+
+                :host a{
+                    text-decoration:none;
+                    color: black;
                 }
-                .col{
-                    float: left;
-                    width: 25%;
-                    padding: 0 10px;
-                }
-                .card{
-                    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-                    padding: 16px;
+
+                .card-img{
                     text-align: center;
-                    background-color: #f1f1f1;
+                    color: #fff;
+                }
+
+                .card-img img{
+                    width:100%;
+                    min-height: 250px;
+                    max-height: 250px;
+                }
+
+                .card-body {
+                    text-align: center;
+                    font-size: 18px;
+                }
+
+                .card-body h1{
+                    font-size: 24px;
+                }
+
+                .card-body p{
+                    font-size: 14px;
+                }
+
+                :host(:hover) {
+                    transform: scale(1.05);
+                    box-shadow: 0 0 40px -10px rgba(0, 0, 0, 0.25);
+                }
+
+                @media screen and (max-width: 1000px) {
+                    :host {
+                        width: 40%;
+                    }
+                }
+                
+                @media screen and (max-width: 620px) {
+                    :host{
+                        width: 80%;
+                    }
                 }
             </style>
             
-            <div class="col">
-                <div class="card">
-                    <img src="https://image.tmdb.org/t/p/w500/${this._movie.poster_path}">
-                    <h2>${this._movie.original_title}</h2>
-                    <p>Released Date: ${this._movie.release_date}</p>
+            <a href="#">
+                <div class="card-img">
+                    <img src="https://image.tmdb.org/t/p/w300/${this._movie.poster_path}" alt="...">
                 </div>
-            </div>
+                <div class="card-body">
+                    <h1 class="card-title">${this._movie.original_title}</h1>
+                    <p class="card-text">Released Date: ${this._movie.release_date}</p>
+                </div>
+            </a>
         `;
     }
 }

@@ -1,12 +1,14 @@
 import '../component/nav-bar.js';
 import '../component/banner-hero.js';
-import '../component/movie-list.js';
+import '../component/rated-movie-list.js';
+import '../component/popular-movie-list.js';
 import MovieSource from '../data/movie-source';
  
 const main = async () => {
     //const searchElement = document.querySelector('search-bar');
     //const movieListElement = document.querySelector('club-list');
-    const ratedMovieElement = document.querySelector('movie-list');
+    const ratedMovieElement = document.querySelector('rated-movie-list');
+    const popularMovieElement = document.querySelector('popular-movie-list');
 
     // const onButtonSearchClicked = async () => {
     //     try{
@@ -21,6 +23,10 @@ const main = async () => {
     const ratedMovie = await MovieSource.getAllRatedMovie();
     ratedMovieElement.movies = ratedMovie;
     
+    //get latest-movie
+    const popularMovie = await MovieSource.getAllPopularMovie();
+    popularMovieElement.movies = popularMovie;
+
     //renderResult(ratedMovie);
 
     // const renderResult = results => {
