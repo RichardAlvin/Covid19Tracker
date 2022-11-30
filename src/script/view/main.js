@@ -1,7 +1,9 @@
 import '../component/nav-bar.js';
 import '../component/banner-hero.js';
+import '../component/movie-footer';
 import '../component/rated-movie-list.js';
 import '../component/popular-movie-list.js';
+import '../component/upcoming-movie-list.js';
 import MovieSource from '../data/movie-source';
  
 const main = async () => {
@@ -9,6 +11,7 @@ const main = async () => {
     //const movieListElement = document.querySelector('club-list');
     const ratedMovieElement = document.querySelector('rated-movie-list');
     const popularMovieElement = document.querySelector('popular-movie-list');
+    const upcomingMovieElement = document.querySelector('upcoming-movie-list');
 
     // const onButtonSearchClicked = async () => {
     //     try{
@@ -26,6 +29,10 @@ const main = async () => {
     //get latest-movie
     const popularMovie = await MovieSource.getAllPopularMovie();
     popularMovieElement.movies = popularMovie;
+
+    //get upcoming-movie
+    const upcomingMovie = await MovieSource.getAllUpcomingMovie();
+    upcomingMovieElement.movies = upcomingMovie;
 
     //renderResult(ratedMovie);
 

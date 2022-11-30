@@ -46,6 +46,7 @@ class BannerHero extends HTMLElement {
               padding: 10px;
               border: none;
               font-size: 16px;
+              text-decoration:none;
             }
             .favoriteButton{
               border-radius: 5px;
@@ -55,6 +56,7 @@ class BannerHero extends HTMLElement {
               border: none;
               margin-left: 5px;
               font-size: 16px;
+              text-decoration:none;
             }
         </style>
 
@@ -63,8 +65,8 @@ class BannerHero extends HTMLElement {
               <h1>Find Favorite Movies</h1>
               <p>Easiest Find and Keep Your Favorite Movie with RAP_Movie</p>
               <div>
-                <button class="latestButton">Latest</button>
-                <button class="favoriteButton">Favorite</button>
+                <a class="latestButton" href="#upcoming">Upcoming</a>
+                <a class="favoriteButton href="#popular">Popular</a>
               </div>
             </div>
         </div>
