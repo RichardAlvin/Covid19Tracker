@@ -68,8 +68,9 @@ class MovieItem extends HTMLElement{
             </style>
             
             <a href="#">
-                <div class="card-img">
+                <div class="card-img" style="position:relative">
                     <img src="https://image.tmdb.org/t/p/w300/${this._movie.poster_path}" alt="...">
+                    <p style="position: absolute; top: 10px; right: 10px; font-size:14px; padding: 3px 12px; border-radius: 25px; color:#eb3d3d; background-color:#f7d883"><i class="fa fa-heart-o" aria-hidden="true"></i></p>
                 </div>
                 <div class="card-body">
                     <h1 class="card-title">${this._movie.original_title}</h1>
