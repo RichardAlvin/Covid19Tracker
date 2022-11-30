@@ -25,11 +25,6 @@ class MovieList extends HTMLElement {
       movieItemElement.movie = movie;
       this.shadowDOM.appendChild(movieItemElement);
     });
-    // this._clubs.forEach(club => {
-    //   const clubItemElement = document.createElement('club-item');
-    //   clubItemElement.club = club;
-    //   this.shadowDOM.appendChild(clubItemElement);
-    // });
   }
 }
  

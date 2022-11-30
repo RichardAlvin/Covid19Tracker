@@ -20,8 +20,7 @@ class BannerHero extends HTMLElement {
             }
             :host {
                 display: block;
-                /*background-image: img;*/
-                background-color: lightgrey;
+                background-image:linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url(${img});
                 color: black;
                 overflow: hidden;
                 min-height: 335px;
@@ -31,12 +30,14 @@ class BannerHero extends HTMLElement {
               flex-direction: row;
               padding: 5%;
             }
-            .col-left{
-              flex-basis: 60%;
-              line-height: 50px;
+            .col{
+              flex-basis: 100%;
+              line-height: 60px;
+              text-align: center;
+              color:white;
             }
-            .col-right{
-              flex-basis: 40%;
+            .col h1{
+              font-size: 50px;
             }
             .latestButton{
               border-radius: 5px;
@@ -44,6 +45,7 @@ class BannerHero extends HTMLElement {
               color: white;
               padding: 10px;
               border: none;
+              font-size: 16px;
             }
             .favoriteButton{
               border-radius: 5px;
@@ -52,19 +54,18 @@ class BannerHero extends HTMLElement {
               padding: 10px;
               border: none;
               margin-left: 5px;
+              font-size: 16px;
             }
         </style>
 
         <div class="row">
-            <div class="col-left">
-              <h1>Find Favorite <br>Movies</h1>
-              <p>Easiest Store Your Favorite Movie with RAP_Movie</p>
+            <div class="col">
+              <h1>Find Favorite Movies</h1>
+              <p>Easiest Find and Keep Your Favorite Movie with RAP_Movie</p>
               <div>
                 <button class="latestButton">Latest</button>
                 <button class="favoriteButton">Favorite</button>
               </div>
-            </div>
-            <div class="col-right">
             </div>
         </div>
       `;

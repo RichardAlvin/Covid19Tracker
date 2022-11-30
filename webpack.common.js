@@ -5,7 +5,9 @@ module.exports = {
   entry: './src/app.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: "bundle.js"
+    filename: "bundle.[contenthash].js",
+    assetModuleFilename: 'img/[contenthash][ext]',
+    clean: true
   },
   module: {
     rules: [
@@ -21,13 +23,20 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpg|gif)$/i,
-        use:[
-          {
-            loader: 'url-loader'
-          }
-        ]
+        test: /\.html$/i,
+        loader: 'html-loader'
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|svg)$/i,
+        type: 'asset/resource'
       }
+      // {
+      //   test: /\.(png|jpg|jpeg|gif)$/i,
+      //   loader: 'file-loader',
+      //   options: {
+      //     outputPath: 'img/'
+      //   }
+      // }
     ]
   },
   plugins: [
