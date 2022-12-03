@@ -1,5 +1,3 @@
-import './search-bar.js';
-
 class NavBar extends HTMLElement {
     constructor() {
       super();
@@ -8,6 +6,15 @@ class NavBar extends HTMLElement {
    
     connectedCallback(){
       this.render();
+    }
+
+    set clickEvent(event){
+      this._clickEvent = event;
+      this.render();
+    }
+
+    get value(){
+      return this.shadowDOM.querySelector('#searchElement').value;
     }
    
     render() {
@@ -78,6 +85,40 @@ class NavBar extends HTMLElement {
             border: none;
           }
 
+          .search-container {
+            float: right;
+          }
+
+          input[type=search] {
+            padding: 6px;
+            margin-top: 8px;
+            font-size: 17px;
+            border: none;
+          }
+          
+          .search-container button {
+            float: right;
+            padding: 6px 10px;
+            margin-top: 8px;
+            margin-right: 16px;
+            background: #ddd;
+            font-size: 17px;
+            border: none;
+            cursor: pointer;
+          }
+          
+          .search-container button:hover {
+            background: #ccc;
+          }
+
+          .searchButton{
+            border-radius: 5px;
+            background-color: green;
+            color: white;
+            padding: 10px;
+            border: none;
+          }
+
           @media screen and (max-width: 600px) {
             :host .searchContainer {
               float: none;
@@ -93,15 +134,34 @@ class NavBar extends HTMLElement {
             :host input[type=text] {
               border: 1px solid #ccc;  
             }
+            .search-container {
+              float: none;
+            }
+            a, input[type=text], .search-container button {
+              float: none;
+              display: block;
+              text-align: left;
+              width: 100%;
+              margin: 0;
+              padding: 14px;
+            }
+            input[type=search] {
+              border: 1px solid #ccc;  
+            }
           }
         </style>
         
         <a href="/">RAP_Movie</a>
         <a href="/" class="active">Home</a>
+        <a href="search-movie.html">Search</a>
         <a href="favorites.html">Favorite</a>
 
-        <search-bar></search-bar>
+        <div id="search-container" class="search-container">
+          <a href="search-movie.html">Search</a>
+        </div>
       `;
+
+      this.shadowDOM.querySelector('#searchButtonElement').addEventListener('click', this._clickEvent);
     }
   }
    

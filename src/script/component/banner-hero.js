@@ -58,6 +58,16 @@ class BannerHero extends HTMLElement {
               font-size: 16px;
               text-decoration:none;
             }
+            .searchButton{
+              border-radius: 5px;
+              background-color: #773ddb;
+              color: white;
+              padding: 10px;
+              border: none;
+              margin-right: 5px;
+              font-size: 16px;
+              text-decoration:none;
+            }
         </style>
 
         <div class="row">
@@ -65,6 +75,7 @@ class BannerHero extends HTMLElement {
               <h1>Find Favorite Movies</h1>
               <p>Easiest Find and Keep Your Favorite Movie with RAP_Movie</p>
               <div>
+                <a class="searchButton" href="search-movie.html">Search</a>
                 <a class="latestButton" href="#upcoming">Upcoming</a>
                 <a class="favoriteButton href="#popular">Popular</a>
               </div>

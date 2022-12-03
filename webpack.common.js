@@ -2,7 +2,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
  
 module.exports = {
-  entry: './src/app.js',
+  entry: {
+    app: './src/app.js',
+    search: './src/search.js'
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: "bundle.[contenthash].js",
@@ -42,11 +45,17 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
-      filename: 'index.html'
+      filename: 'index.html',
+      chunks: ['app']
     }),
     new HtmlWebpackPlugin({
       template: './src/favorites.html',
       filename: 'favorites.html'
+    }),
+    new HtmlWebpackPlugin({
+      template: './src/search-movie.html',
+      filename: 'search-movie.html',
+      chunks: ['search']
     })
   ]
 }
